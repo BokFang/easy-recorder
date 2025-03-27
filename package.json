@@ -1,0 +1,33 @@
+{
+    "name": "easy-recorder",
+    "version": "1.0.0",
+    "description": "桌面端录制工具",
+    "main": "dist/main/main.js",
+    "scripts": {
+        "start": "cross-env NODE_ENV=development electron .",
+        "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:main\"",
+        "dev:main": "tsc -p tsconfig.main.json -w",
+        "dev:renderer": "vite",
+        "build": "npm run build:main && npm run build:renderer",
+        "build:main": "tsc -p tsconfig.main.json",
+        "build:renderer": "vite build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^20.10.5",
+        "@types/react": "^18.2.45",
+        "@types/react-dom": "^18.2.18",
+        "@vitejs/plugin-react": "^4.2.1",
+        "concurrently": "^8.2.2",
+        "cross-env": "^7.0.3",
+        "electron": "^28.1.0",
+        "typescript": "^5.3.3",
+        "vite": "^5.0.10"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
+}
